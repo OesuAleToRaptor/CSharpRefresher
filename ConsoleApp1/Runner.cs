@@ -22,23 +22,29 @@ namespace Katas
         static void Main(string[] args)
         {
             Console.WriteLine(WELCOME_MSG);
-            buildKatas();
-            displayKatas();
-
-            readUserInputRecursively();
+            InitMainMenu();
         }
 
-        private static void buildKatas()
+        public static void InitMainMenu()
+        {
+            BuildKatas();
+            DisplayKatas();
+            ReadUserInputRecursively();
+        }
+
+        private static void BuildKatas()
         {
             //Let's imagine it retrieves the dictionary from a DB via DAO
-            Dictionary<int, string> kataRoster = new Dictionary<int, string>();
-            kataRoster.Add(1, "Isogram");
-            kataRoster.Add(2, "Fibonacci");
-            kataRoster.Add(3, "Exit");
+            Dictionary<int, string> kataRoster = new Dictionary<int, string>
+            {
+                { 1, "Isogram" },
+                { 2, "Fibonacci" },
+                { 3, "Exit" }
+            };
             globalKataDictionary = kataRoster;
         }
 
-        private static void displayKatas()
+        private static void DisplayKatas()
         {
             foreach (KeyValuePair<int, string> kataDictionaryEntry in globalKataDictionary)
             {
@@ -49,61 +55,62 @@ namespace Katas
             Console.WriteLine();
         }
 
-        private static void readUserInputRecursively()
+        private static void ReadUserInputRecursively()
         {
             //Read input without echoing
             char userInput = Console.ReadKey(true).KeyChar;
-            processUserInput(userInput);
+            ProcessUserInput(userInput);
         }
 
-        private static void processUserInput(char userInput)
+        private static void ProcessUserInput(char userInput)
         {
             if (Char.IsDigit(userInput))
             {
-                handleDigitInput(userInput);
+                HandleDigitInput(userInput);
             }
             else
             {
                 //Input is not a digit
-                handleInvalidInput(INPUT_CHAR_ERR_MSG);
+                HandleInvalidInput(INPUT_CHAR_ERR_MSG);
             }
         }
 
-        private static void handleDigitInput(char userInput)
+        private static void HandleDigitInput(char userInput)
         {
             int inputDigit = int.Parse(userInput.ToString());
             if (inputDigit > globalKataDictionary.Count)
             {
                 //Input out of bounds
-                handleInvalidInput(INPUT_OUT_OF_BOUNDS_MSG);
+                HandleInvalidInput(INPUT_OUT_OF_BOUNDS_MSG);
             }
             else if (inputDigit == 0)
             {
                 //Input is zero
-                handleInvalidInput(INPUT_ZERO_MSG);
+                HandleInvalidInput(INPUT_ZERO_MSG);
             }
-            chooseKataToDisplay(inputDigit);
+            ChooseKataToDisplay(inputDigit);
         }
 
-        private static void handleInvalidInput(string err_msg)
+        private static void HandleInvalidInput(string err_msg)
         {
             Console.WriteLine(err_msg);
-            displayKatas();
+            DisplayKatas();
             //Reading input via recursion
-            readUserInputRecursively();
+            ReadUserInputRecursively();
         }
 
-        private static void chooseKataToDisplay(int inputDigit)
+        private static void ChooseKataToDisplay(int inputDigit)
         {
             switch (inputDigit)
             {
                 case 1:
                     Console.WriteLine("Kata chosen");
                     Isogram isogram = new Isogram();    
-                    isogram.execute();
+                    isogram.Execute();
                     break;
                 case 2:
-                    //executeFibonacci();
+                    Fibonacci fibonacci = new Fibonacci();
+                    fibonacci.Execute();
                     break;
                 case 3:
                     //Exit application

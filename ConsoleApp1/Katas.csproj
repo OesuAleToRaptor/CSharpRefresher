@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractKata.cs" />
+    <Compile Include="Fibonacci.cs" />
     <Compile Include="Isogram.cs" />
     <Compile Include="Runner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -14,12 +14,12 @@ namespace Katas
 
         //Abstract override methods
         #region
-        public override void performKata(string userInput)
+        public override void PerformKata(string userInput)
         {
-            validateInputAsIsogram(userInput);
+            ValidateInputAsIsogram(userInput);
         }
 
-        public override void displayWelcomeMessage()
+        public override void DisplayWelcomeMessage()
         {
             Console.WriteLine(WELCOME_MSG);
         }
@@ -27,7 +27,7 @@ namespace Katas
 
         //Own methods
         #region
-        public void validateInputAsIsogram(string userInput)
+        public void ValidateInputAsIsogram(string userInput)
         {
             if (IsIsogram(userInput.Trim()))
             {
@@ -46,12 +46,12 @@ namespace Katas
             bool isIsogram = true;
 
             //Passing arguments as reference
-            loopOverLetters(letters, ref isIsogram);
+            LoopOverLetters(letters, ref isIsogram);
 
             return isIsogram;
         }
 
-        private static void loopOverLetters(char[] letters, ref bool isIsogram)
+        private static void LoopOverLetters(char[] letters, ref bool isIsogram)
         {
             int index = 0;
             while (isIsogram && index < letters.Length - 1)
