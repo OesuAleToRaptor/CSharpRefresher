@@ -1,0 +1,7 @@
+C:\Users\HP\source\repos\CSharpRefresher\ConsoleApp1\obj\Debug\Katas.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\CSharpRefresher\ConsoleApp1\bin\Debug\Katas.exe.config
+C:\Users\HP\source\repos\CSharpRefresher\ConsoleApp1\bin\Debug\Katas.exe
+C:\Users\HP\source\repos\CSharpRefresher\ConsoleApp1\bin\Debug\Katas.pdb
+C:\Users\HP\source\repos\CSharpRefresher\ConsoleApp1\obj\Debug\Katas.csprojAssemblyReference.cache
+C:\Users\HP\source\repos\CSharpRefresher\ConsoleApp1\obj\Debug\Katas.exe
+C:\Users\HP\source\repos\CSharpRefresher\ConsoleApp1\obj\Debug\Katas.pdb
